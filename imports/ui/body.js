@@ -11,7 +11,19 @@ Template.body.helpers({
 })
 
 Template.body.events({
-  'click .test': (event) => {
-    console.log(event.type)
+  'submit .new-items'(event) {
+    event.preventDefault();
+    Items.insert({
+      itemOne: {
+        text: event.target.item1.value,
+        value: 0
+      },
+      itemTwo: {
+        text: event.target.item2.value,
+        value: 0
+      }
+    })
+    event.target.item1.value = "";
+    event.target.item2.value = "";
   }
 })

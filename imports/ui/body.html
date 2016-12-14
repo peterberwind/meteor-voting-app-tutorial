@@ -3,9 +3,14 @@
     <h1>Voting App</h1>
   </header>
   <main>
+    <form class="new-items">
+      <input type="text" name="item1" placeholder="Item One" />
+      <input type="text" name="item2" placeholder="Item Two" />
+      <input type="submit">
+    </form>
     <ul>
     {{#each items}}
-      <li>{{text}}</li>
+      <li>{{itemOne.text}} vs {{itemTwo.text}}</li>
     {{/each}}
     </ul>
     <h2>{{ hello }}</h2>
